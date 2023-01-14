@@ -4,13 +4,13 @@ const bcrypt = require("bcrypt");
 userRoute = express.Router();
 const { connection, usermodel } = require("../config/db");
 userRoute.get("/", async (req, res) => {
-    let data = await usermodel.find()
-    res.send(data)
-})
+  let data = await usermodel.find();
+  res.send(data);
+});
 
 userRoute.post("/user/register", async (req, res) => {
   try {
-    let { username, email, role, location, password } = req.body;
+    let { username, email, location, password } = req.body;
     bcrypt.hash(password, 8, async (err, hash) => {
       try {
         let data = new usermodel({
