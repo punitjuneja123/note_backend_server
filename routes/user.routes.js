@@ -48,6 +48,7 @@ userRoute.post("/user/login", async (req, res) => {
         }
       });
     } else {
+      res.status(400);
       res.send("wrong credentials");
     }
   } catch (error) {
