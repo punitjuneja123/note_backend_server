@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const noteSchema = mongoose.Schema(
   {
-    titile: String,
+    title: String,
     note: String,
     category: String,
     userID: String,
