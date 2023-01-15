@@ -1,7 +1,7 @@
 const jws = require("jsonwebtoken");
 
 function authentication(req, res, next) {
-  const token = req.headers.authenticate;
+  const token = req.headers.authorization;
   if (token) {
     const decode = jws.verify(token, process.env.key);
     if (decode) {
